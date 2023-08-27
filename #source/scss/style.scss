@@ -1,0 +1,143 @@
+@import "reset";
+@import "vars";
+@import "mixins";
+@import "fonts";
+
+html {
+	scroll-behavior: smooth;
+}
+
+.wrapper {
+	min-height: 100%;
+	width: 100%;
+	overflow: hidden;
+	background: #474747;
+}
+
+.container {
+	max-width: 1200px;
+	padding: 0 15px;
+	margin: 0 auto;
+	height: 100%;
+}
+svg,
+main {
+	width: 400px;
+	height: 200px;
+	position: relative;
+}
+
+.main {
+	// border: 1px solid #f00;
+	width: 100%;
+	height: 100dvh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.block {
+	width: 400px;
+	height: 200px;
+}
+
+svg {
+	position: absolute; // вся сама картинка svg
+}
+
+path {
+	stroke: #d8d8dd; // color of the line
+	stroke-width: 2px; // width of the line
+}
+
+.mover { // движущийся элемент
+	
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background: #20e9f34d;
+	border: 2px solid hsl(183, 100%, 54%);
+	border-right-color: hsl(43, 100%, 50%);
+	border-left-color: hsl(343, 100%, 50%);
+	
+	color: #fff;
+	font-size: 40px;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	offset-path: path("M50,50 C50,200 120,0 220,100 S 400,150 350,0"); // path в svg
+	offset-rotate: auto 90deg;
+	offset-anchor: 50% 50%; // координаты центра
+	animation: move-along 5s 0ms infinite forwards ease-in-out;
+}
+
+.mover.anchor {
+	// position: absolute;
+	background: red;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	border: none;
+	offset-anchor: center center;
+}
+
+@keyframes move-along {
+	100% {
+		offset-distance: 100%; // процент пути, который пройдёт элемент
+	}
+}
+
+
+// aside {
+// 	display: none;
+// }
+
+// @supports (offset-anchor: 70% 70%) {
+// 	aside {
+// 		display: grid;
+// 	}
+// }
+
+/*
+@supports (offset-position: 70% 70%) {
+  #position {
+    display: block;
+  }
+}
+*/
+
+
+
+
+
+// body {
+// 	min-height: 100vh;
+// 	background: #16161c;
+// 	font-family: system-ui, sans-serif;
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	flex-direction: column;
+// 	color: hsl(183, 100%, 97%);
+// 	padding: 2rem 0;
+// 	box-sizing: border-box;
+// }
+
+// aside {
+// 	margin: 0rem 1rem;
+// 	grid-template-columns: 4em 1fr 4em;
+// 	grid-gap: 1em;
+// }
+
+// label {
+// 	text-align: right;
+// }
+
+// input {
+// 	margin-bottom: 1rem;
+// }
+
+// output {
+// 	opacity: .7;
+// }

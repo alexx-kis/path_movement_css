@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>
+		Path movement in CSS
+	</title>
+	<meta http-equiv="Content-type" content='text/html;charset=UTF-8' />
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="container">
+			<main class="main">
+				<div class="block">
+					<svg viewBox="0 0 400 200">
+						<path d="M50,50 C50,200 120,0 220,100 S 400,150 350,0" fill="none" />
+					</svg>
+					<div class="mover">A</div>
+					<div class="mover anchor"></div>
+				</div>
+			</main>
+		</div>
+
+		<!-- <aside>
+			<label for="anchor-x">X</label>
+			<input type="range" id="anchor-x" value="50" min="-20" max="120" />
+			<output id="output-x">50%</output>
+
+			<label for="anchor-y">Y</label>
+			<input type="range" id="anchor-y" value="50" min="-20" max="120" />
+			<output id="output-y">50%</output>
+		</aside> -->
+	</div>
+
+	<script src="js/script.js"></script>
+</body>
+
+
+</html>
